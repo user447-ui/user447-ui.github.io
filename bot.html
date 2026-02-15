@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VilvBot - Bot Documentation</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 850px; margin: 40px auto; padding: 0 20px; }
+        h1 { border-bottom: 2px solid #005cc5; padding-bottom: 10px; color: #005cc5; }
+        h2 { margin-top: 30px; color: #24292e; }
+        code { background: #f6f8fa; padding: 3px 6px; border-radius: 4px; font-family: "SFMono-Regular", Consolas, monospace; font-size: 90%; }
+        .info-box { background: #e7f3ff; border-left: 5px solid #2196F3; padding: 15px; margin: 20px 0; }
+        .key-box { background: #2d2d2d; color: #fff; padding: 15px; border-radius: 6px; overflow-x: auto; font-family: monospace; }
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.9em; color: #666; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <h1>🤖 VilvBot Documentation</h1>
+    <p><strong>VilvBot</strong> is an automated web crawler designed for search engine indexing. We aim to be a "good citizen" of the web by following industry-standard crawling etiquette.</p>
+
+    <div class="info-box">
+        <strong>Verified Bot Status:</strong> This bot is configured to meet Cloudflare's verification requirements, including unique identification and cryptographic request signing.
+    </div>
+
+    <h2>Identification</h2>
+    <p>Our crawler identifies itself using the following User-Agent string:</p>
+    <code>VilvBot/1.0 (+https://user447-ui.github.io/bot.html)</code>
+
+    <h2>Crawling Policy</h2>
+    <ul>
+        <li><strong>Robots.txt:</strong> We strictly honor all <code>Disallow</code> directives.</li>
+        <li><strong>Crawl-Delay:</strong> We respect the <code>crawl-delay</code> setting to prevent server overload (mandatory for Cloudflare-protected zones).</li>
+        <li><strong>Frequency:</strong> Our distributed architecture ensures we do not perform excessive scraping on any single host.</li>
+    </ul>
+
+    <h2>Verification & Security</h2>
+    <p>To prevent spoofing and ensure transparency, VilvBot signs its requests using <strong>Ed25519</strong> cryptography. This allows site owners and infrastructure providers to verify that the traffic originated from our official crawler.</p>
+    
+    <h2>How to Opt-Out</h2>
+    <p>If you wish to prevent VilvBot from indexing your site, please add the following rules to your <code>robots.txt</code> file:</p>
+    <div class="key-box" style="padding: 15px;">
+        User-agent: VilvBot<br>
+        Disallow: /
+    </div>
+
+    <h2>Purpose of Service</h2>
+    <p>The collected data is used exclusively for building a search index. We do not perform scalping, credential stuffing, or any malicious scanning activities. Our operations are benign and intended for the benefit of the research community.</p>
+
+    <h2>Contact</h2>
+    <p>For inquiries, removal requests, or technical issues, please open an issue on our official GitHub repository:</p>
+    <a href="https://github.com/user447-ui/user447-ui.github.io">https://github.com/user447-ui/user447-ui.github.io</a>
+</body>
+</html>
