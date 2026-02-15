@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/.well-known/http-message-signatures-directory"
+  [headers.values]
+    Content-Type = "application/http-message-signatures-directory+json"
